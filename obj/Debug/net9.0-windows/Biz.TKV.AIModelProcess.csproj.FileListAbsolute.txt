@@ -10,3 +10,14 @@ C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Debug
 C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Debug\net9.0-windows\refint\Biz.TKV.AIModelProcess.dll
 C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Debug\net9.0-windows\Biz.TKV.AIModelProcess.pdb
 C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Debug\net9.0-windows\ref\Biz.TKV.AIModelProcess.dll
+C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\obj\Debug\net9.0-windows\Biz.TKV.AIModelProcess.csproj.AssemblyReference.cache
+C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\obj\Debug\net9.0-windows\Biz.TKV.AIModelProcess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\obj\Debug\net9.0-windows\Biz.TKV.AIModelProcess.csproj.CoreCompileInputs.cache
+C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\obj\Debug\net9.0-windows\Biz.TKV.AIModelProcess.sourcelink.json
+C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\bin\Debug\net9.0-windows\Biz.TKV.AIModelProcess.deps.json
+C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\bin\Debug\net9.0-windows\Biz.TKV.AIModelProcess.dll
+C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\bin\Debug\net9.0-windows\Biz.TKV.AIModelProcess.pdb
+C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\obj\Debug\net9.0-windows\Biz.TKV.AIModelProcess.dll
+C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\obj\Debug\net9.0-windows\refint\Biz.TKV.AIModelProcess.dll
+C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\obj\Debug\net9.0-windows\Biz.TKV.AIModelProcess.pdb
+C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\obj\Debug\net9.0-windows\ref\Biz.TKV.AIModelProcess.dll
