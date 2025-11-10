@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <RootNamespace>PromptAnalyzerTest</RootNamespace>
+  </PropertyGroup>
+  <!-- Removed explicit Compile Include entries to avoid duplicate compile items error -->
+  <ItemGroup>
+    <ProjectReference Include="..\Biz.TKV.AIModelProcess.csproj" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,12 @@
+C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\bin\Release\net9.0-windows\Biz.TKV.AIModelProcess.deps.json
+C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\bin\Release\net9.0-windows\Biz.TKV.AIModelProcess.dll
+C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\bin\Release\net9.0-windows\Biz.TKV.AIModelProcess.pdb
+C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Release\net9.0-windows\Biz.TKV.AIModelProcess.csproj.AssemblyReference.cache
+C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Release\net9.0-windows\Biz.TKV.AIModelProcess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Release\net9.0-windows\Biz.TKV.AIModelProcess.AssemblyInfoInputs.cache
+C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Release\net9.0-windows\Biz.TKV.AIModelProcess.AssemblyInfo.cs
+C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Release\net9.0-windows\Biz.TKV.AIModelProcess.csproj.CoreCompileInputs.cache
+C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Release\net9.0-windows\Biz.TKV.AIModelProcess.dll
+C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Release\net9.0-windows\refint\Biz.TKV.AIModelProcess.dll
+C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Release\net9.0-windows\Biz.TKV.AIModelProcess.pdb
+C:\Users\kenji.yeo\source\repos\GitServer\TKV\Biz.TKV.EmbeddingProcess\obj\Release\net9.0-windows\ref\Biz.TKV.AIModelProcess.dll
