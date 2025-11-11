@@ -1,0 +1,1034 @@
+[33mWARNING[0m:  [11-11-2025 11:15:44] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [11-11-2025 11:15:44] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [11-11-2025 11:15:44] Starting component System
+[36mDEBUG[0m:    [11-11-2025 11:15:44] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [11-11-2025 11:15:44] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [11-11-2025 11:15:44] Starting component SqliteDB
+[36mDEBUG[0m:    [11-11-2025 11:15:44] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [11-11-2025 11:15:44] Starting component Posthog
+[36mDEBUG[0m:    [11-11-2025 11:15:44] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [11-11-2025 11:15:44] Starting component SegmentAPI
+[32mINFO[0m:     [11-11-2025 11:15:45] Started server process [[36m12584[0m]
+[32mINFO[0m:     [11-11-2025 11:15:45] Waiting for application startup.
+[32mINFO[0m:     [11-11-2025 11:15:45] Application startup complete.
+[32mINFO[0m:     [11-11-2025 11:15:45] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [11-11-2025 11:15:59] ::1:54762 - "GET /api/v2/version HTTP/1.1" 404
+[32mINFO[0m:     [11-11-2025 11:16:05] ::1:50788 - "GET /api/v1/version HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:17:10] ::1:63154 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:17:17] ::1:63155 - "GET /api/v1/heartbeat HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:19:03] ::1:57602 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:19:03] ::1:57602 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:19:03] ::1:57603 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:19:08] ::1:57607 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:19:36] ::1:50540 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:19:36] ::1:50540 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:19:36] ::1:50541 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:19:40] ::1:50541 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [11-11-2025 11:19:40] Starting component PersistentLocalHnswSegment
+[32mINFO[0m:     [11-11-2025 11:19:40] ::1:50541 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 11:20:35] ::1:62316 - "GET /api/v2/collections/my_documents/query HTTP/1.1" 404
+[32mINFO[0m:     [11-11-2025 11:20:59] ::1:62391 - "POST /api/v2/collections/my_documents/query HTTP/1.1" 404
+[32mINFO[0m:     [11-11-2025 11:21:46] ::1:62412 - "POST /api/v2/collections/my_documents/query HTTP/1.1" 404
+[32mINFO[0m:     [11-11-2025 11:22:06] ::1:62413 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:22:27] ::1:52276 - "POST /api/v1/collections/my_documents/query HTTP/1.1" 400
+[32mINFO[0m:     [11-11-2025 11:23:13] ::1:54144 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:24:25] ::1:53296 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:27:38] ::1:64157 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:38:14] ::1:61208 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:41:03] ::1:61172 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:42:31] ::1:55886 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:43:01] ::1:65533 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:47:20] ::1:55819 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:52:18] ::1:58587 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 11:58:33] ::1:53182 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 12:01:17] ::1:56416 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 13:40:01] ::1:59577 - "POST /api/v1/collections/8ef8e089-f17d-4140-9258-2839f08dd672/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 14:08:56] Shutting down
+[32mINFO[0m:     [11-11-2025 14:08:56] Waiting for application shutdown.
+[36mDEBUG[0m:    [11-11-2025 14:08:56] Stopping component System
+[36mDEBUG[0m:    [11-11-2025 14:08:56] Stopping component SegmentAPI
+[36mDEBUG[0m:    [11-11-2025 14:08:56] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [11-11-2025 14:08:56] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [11-11-2025 14:08:56] Stopping component Posthog
+[36mDEBUG[0m:    [11-11-2025 14:08:56] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [11-11-2025 14:08:56] Stopping component SqliteDB
+[36mDEBUG[0m:    [11-11-2025 14:08:56] Stopping component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [11-11-2025 14:08:56] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [11-11-2025 14:08:56] Application shutdown complete.
+[32mINFO[0m:     [11-11-2025 14:08:56] Finished server process [[36m12584[0m]
+[33mWARNING[0m:  [11-11-2025 15:45:23] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [11-11-2025 15:45:23] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [11-11-2025 15:45:23] Starting component System
+[36mDEBUG[0m:    [11-11-2025 15:45:23] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [11-11-2025 15:45:23] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [11-11-2025 15:45:23] Starting component SqliteDB
+[36mDEBUG[0m:    [11-11-2025 15:45:23] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [11-11-2025 15:45:23] Starting component Posthog
+[36mDEBUG[0m:    [11-11-2025 15:45:23] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [11-11-2025 15:45:23] Starting component SegmentAPI
+[32mINFO[0m:     [11-11-2025 15:45:23] Started server process [[36m7352[0m]
+[32mINFO[0m:     [11-11-2025 15:45:23] Waiting for application startup.
+[32mINFO[0m:     [11-11-2025 15:45:23] Application startup complete.
+[32mINFO[0m:     [11-11-2025 15:45:23] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [11-11-2025 15:45:36] ::1:49254 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 15:46:09] ::1:58402 - "DELETE /api/v1/collections/my_documents HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 15:46:12] ::1:58404 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 15:46:39] ::1:60799 - "POST /api/v1/collections HTTP/1.1" 422
+[32mINFO[0m:     [11-11-2025 15:47:23] ::1:52972 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 15:48:16] ::1:60628 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 15:49:32] ::1:53598 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 15:50:15] ::1:53608 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 15:50:15] ::1:53608 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[31mERROR[0m:    [11-11-2025 15:50:15] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 15:50:15] ::1:53609 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 15:50:17] ::1:53610 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:03:46] ::1:49999 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:04:19] ::1:62758 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:04:19] ::1:62758 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:04:19] ::1:62759 - "GET /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:04:19] ::1:62759 - "GET /api/v1/collections/example_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:04:19] ::1:62759 - "POST /api/v1/collections/61f4e4f8-9ac5-4ca0-99f1-9b1c4331a218/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:04:54] ::1:62780 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:04:54] ::1:62780 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:04:54] ::1:62781 - "GET /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:04:54] ::1:62781 - "GET /api/v1/collections/example_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:04:54] ::1:62781 - "POST /api/v1/collections/61f4e4f8-9ac5-4ca0-99f1-9b1c4331a218/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:05:15] ::1:62790 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:05:15] ::1:62790 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:05:15] ::1:62791 - "GET /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:05:15] ::1:62791 - "GET /api/v1/collections/example_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:05:15] ::1:62791 - "POST /api/v1/collections/61f4e4f8-9ac5-4ca0-99f1-9b1c4331a218/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:06:09] ::1:62805 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:06:09] ::1:62805 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:06:09] ::1:62806 - "GET /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:06:09] ::1:62806 - "GET /api/v1/collections/example_collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:06:09] ::1:62806 - "POST /api/v1/collections/61f4e4f8-9ac5-4ca0-99f1-9b1c4331a218/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:06:32] ::1:50866 - "POST /api/v1/collections/example_collection/query HTTP/1.1" 422
+[32mINFO[0m:     [11-11-2025 16:06:56] ::1:50870 - "POST /api/v1/collections/example_collection/query HTTP/1.1" 422
+[32mINFO[0m:     [11-11-2025 16:07:11] ::1:50872 - "POST /api/v1/collections/example_collection/query HTTP/1.1" 422
+[32mINFO[0m:     [11-11-2025 16:07:25] ::1:50875 - "POST /api/v1/collections/example_collection/query HTTP/1.1" 422
+[32mINFO[0m:     [11-11-2025 16:07:41] ::1:50881 - "POST /api/v1/collections/example_collection/query HTTP/1.1" 422
+[32mINFO[0m:     [11-11-2025 16:07:54] ::1:50884 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:08:00] ::1:50885 - "GET / HTTP/1.1" 404
+[32mINFO[0m:     [11-11-2025 16:08:04] ::1:50886 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:08:30] ::1:50892 - "POST /api/v1/collections/example_collection/query HTTP/1.1" 422
+[32mINFO[0m:     [11-11-2025 16:08:40] ::1:50895 - "POST /api/v1/collections/example_collection/query HTTP/1.1" 422
+[32mINFO[0m:     [11-11-2025 16:08:56] ::1:50897 - "POST /api/v1/collections/example_collection/query HTTP/1.1" 400
+[32mINFO[0m:     [11-11-2025 16:09:05] ::1:50901 - "GET /api/v1/collections HTTP/1.1" 200
+[36mDEBUG[0m:    [11-11-2025 16:09:18] Starting component PersistentLocalHnswSegment
+[31mERROR[0m:    [11-11-2025 16:09:18] Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:09:18] ::1:50904 - "POST /api/v1/collections/61f4e4f8-9ac5-4ca0-99f1-9b1c4331a218/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:10:20] ::1:50918 - "POST /api/v1/collections/61f4e4f8-9ac5-4ca0-99f1-9b1c4331a218/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:11:27] ::1:56280 - "POST /api/v1/collections/61f4e4f8-9ac5-4ca0-99f1-9b1c4331a218/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:17:23] ::1:53234 - "GET /api/v1/collections HTTP/1.1" 200
+[31mERROR[0m:    [11-11-2025 16:17:50] Collection 61f4e4f8-9ac5-4ca0-99f1-9b1c4331a218 does not exist.
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_utils.py", line 79, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 781, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    |     return await call_next(request)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\nicholas.lee\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_utils.py", line 85, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    |     return await call_next(request)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 125, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 111, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 391, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 292, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2485, in run_sync_in_worker_thread
+    |     return await future
+    |            ^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 976, in run
+    |     result = context.run(func, *args)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    |     return f(*args, **kwargs)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\server\fastapi\__init__.py", line 479, in delete_collection
+    |     return self._api.delete_collection(
+    |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+    |         collection_name, tenant=tenant, database=database
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\api\segment.py", line 347, in delete_collection
+    |     raise ValueError(f"Collection {name} does not exist.")
+    | ValueError: Collection 61f4e4f8-9ac5-4ca0-99f1-9b1c4331a218 does not exist.
+    +------------------------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\nicholas.lee\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 292, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\server\fastapi\__init__.py", line 479, in delete_collection
+    return self._api.delete_collection(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        collection_name, tenant=tenant, database=database
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\api\segment.py", line 347, in delete_collection
+    raise ValueError(f"Collection {name} does not exist.")
+ValueError: Collection 61f4e4f8-9ac5-4ca0-99f1-9b1c4331a218 does not exist.
+[32mINFO[0m:     [11-11-2025 16:17:50] ::1:53241 - "DELETE /api/v1/collections/61f4e4f8-9ac5-4ca0-99f1-9b1c4331a218 HTTP/1.1" 500
+[32mINFO[0m:     [11-11-2025 16:17:55] ::1:53243 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:18:11] ::1:53245 - "DELETE /api/v1/collections/example_collection HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:18:13] ::1:53246 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:19:39] ::1:53278 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:19:39] ::1:53278 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:19:39] ::1:53279 - "GET /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[31mERROR[0m:    [11-11-2025 16:19:39] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:19:39] ::1:53279 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:20:48] ::1:53290 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:26:11] ::1:53358 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:26:11] ::1:53358 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:30:20] ::1:65376 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:30:20] ::1:65376 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:31:24] ::1:65392 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:31:24] ::1:65392 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:31:46] ::1:65473 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:31:46] ::1:65473 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:32:17] ::1:65479 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:32:17] ::1:65479 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:32:17] ::1:65480 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:32:17] ::1:65480 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [11-11-2025 16:32:17] Starting component PersistentLocalHnswSegment
+[31mERROR[0m:    [11-11-2025 16:32:17] Failed to send telemetry event CollectionAddEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:32:17] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:17] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:17] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:17] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:17] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:18] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:18] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:18] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:18] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:18] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:18] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:19] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:19] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:19] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:19] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:32:19] ::1:65480 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:33:01] ::1:62153 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:33:01] ::1:62153 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:33:01] ::1:62154 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:33:01] ::1:62154 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:33:01] ::1:62154 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[31mERROR[0m:    [11-11-2025 16:33:01] Failed to send telemetry event CollectionGetEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:33:01] ::1:62154 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:33:48] ::1:54354 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:33:48] ::1:54354 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:33:48] ::1:54355 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:33:48] ::1:54355 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [11-11-2025 16:33:48] Insert of existing embedding ID: chunk_0
+[33mWARNING[0m:  [11-11-2025 16:33:48] Add of existing embedding ID: chunk_0
+[32mINFO[0m:     [11-11-2025 16:33:48] ::1:54355 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:33:48] Insert of existing embedding ID: chunk_1
+[33mWARNING[0m:  [11-11-2025 16:33:48] Add of existing embedding ID: chunk_1
+[32mINFO[0m:     [11-11-2025 16:33:48] ::1:54355 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:33:48] Insert of existing embedding ID: chunk_2
+[33mWARNING[0m:  [11-11-2025 16:33:48] Add of existing embedding ID: chunk_2
+[32mINFO[0m:     [11-11-2025 16:33:48] ::1:54355 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:33:48] Insert of existing embedding ID: chunk_3
+[33mWARNING[0m:  [11-11-2025 16:33:48] Add of existing embedding ID: chunk_3
+[32mINFO[0m:     [11-11-2025 16:33:48] ::1:54355 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:33:48] Insert of existing embedding ID: chunk_4
+[33mWARNING[0m:  [11-11-2025 16:33:48] Add of existing embedding ID: chunk_4
+[32mINFO[0m:     [11-11-2025 16:33:48] ::1:54355 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:33:48] Insert of existing embedding ID: chunk_5
+[33mWARNING[0m:  [11-11-2025 16:33:48] Add of existing embedding ID: chunk_5
+[32mINFO[0m:     [11-11-2025 16:33:48] ::1:54355 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:33:49] Insert of existing embedding ID: chunk_6
+[33mWARNING[0m:  [11-11-2025 16:33:49] Add of existing embedding ID: chunk_6
+[32mINFO[0m:     [11-11-2025 16:33:49] ::1:54355 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:33:49] Insert of existing embedding ID: chunk_7
+[33mWARNING[0m:  [11-11-2025 16:33:49] Add of existing embedding ID: chunk_7
+[32mINFO[0m:     [11-11-2025 16:33:49] ::1:54355 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:33:49] Insert of existing embedding ID: chunk_8
+[33mWARNING[0m:  [11-11-2025 16:33:49] Add of existing embedding ID: chunk_8
+[32mINFO[0m:     [11-11-2025 16:33:49] ::1:54355 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:07] ::1:57339 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:34:07] ::1:57339 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:34:07] ::1:57340 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:34:07] ::1:57340 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [11-11-2025 16:34:07] Insert of existing embedding ID: chunk_0
+[33mWARNING[0m:  [11-11-2025 16:34:07] Add of existing embedding ID: chunk_0
+[32mINFO[0m:     [11-11-2025 16:34:07] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:07] Insert of existing embedding ID: chunk_1
+[33mWARNING[0m:  [11-11-2025 16:34:07] Add of existing embedding ID: chunk_1
+[32mINFO[0m:     [11-11-2025 16:34:07] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:07] Insert of existing embedding ID: chunk_2
+[33mWARNING[0m:  [11-11-2025 16:34:07] Add of existing embedding ID: chunk_2
+[32mINFO[0m:     [11-11-2025 16:34:07] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:07] Insert of existing embedding ID: chunk_3
+[33mWARNING[0m:  [11-11-2025 16:34:07] Add of existing embedding ID: chunk_3
+[32mINFO[0m:     [11-11-2025 16:34:07] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:07] Insert of existing embedding ID: chunk_4
+[33mWARNING[0m:  [11-11-2025 16:34:07] Add of existing embedding ID: chunk_4
+[32mINFO[0m:     [11-11-2025 16:34:07] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:08] Insert of existing embedding ID: chunk_5
+[33mWARNING[0m:  [11-11-2025 16:34:08] Add of existing embedding ID: chunk_5
+[32mINFO[0m:     [11-11-2025 16:34:08] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:08] Insert of existing embedding ID: chunk_6
+[33mWARNING[0m:  [11-11-2025 16:34:08] Add of existing embedding ID: chunk_6
+[32mINFO[0m:     [11-11-2025 16:34:08] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:08] Insert of existing embedding ID: chunk_7
+[33mWARNING[0m:  [11-11-2025 16:34:08] Add of existing embedding ID: chunk_7
+[32mINFO[0m:     [11-11-2025 16:34:08] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:08] Insert of existing embedding ID: chunk_8
+[33mWARNING[0m:  [11-11-2025 16:34:08] Add of existing embedding ID: chunk_8
+[32mINFO[0m:     [11-11-2025 16:34:08] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:08] Insert of existing embedding ID: chunk_9
+[33mWARNING[0m:  [11-11-2025 16:34:08] Add of existing embedding ID: chunk_9
+[32mINFO[0m:     [11-11-2025 16:34:08] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:08] Insert of existing embedding ID: chunk_10
+[33mWARNING[0m:  [11-11-2025 16:34:08] Add of existing embedding ID: chunk_10
+[32mINFO[0m:     [11-11-2025 16:34:08] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:08] Insert of existing embedding ID: chunk_11
+[33mWARNING[0m:  [11-11-2025 16:34:08] Add of existing embedding ID: chunk_11
+[32mINFO[0m:     [11-11-2025 16:34:08] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:08] Insert of existing embedding ID: chunk_12
+[33mWARNING[0m:  [11-11-2025 16:34:08] Add of existing embedding ID: chunk_12
+[32mINFO[0m:     [11-11-2025 16:34:08] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:09] Insert of existing embedding ID: chunk_13
+[33mWARNING[0m:  [11-11-2025 16:34:09] Add of existing embedding ID: chunk_13
+[32mINFO[0m:     [11-11-2025 16:34:09] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:09] Insert of existing embedding ID: chunk_14
+[33mWARNING[0m:  [11-11-2025 16:34:09] Add of existing embedding ID: chunk_14
+[32mINFO[0m:     [11-11-2025 16:34:09] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:34:09] Insert of existing embedding ID: chunk_15
+[33mWARNING[0m:  [11-11-2025 16:34:09] Add of existing embedding ID: chunk_15
+[32mINFO[0m:     [11-11-2025 16:34:09] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:09] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:09] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:09] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:09] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:09] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:10] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:10] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:10] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:10] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:10] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:10] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:10] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:10] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:11] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:11] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:11] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:11] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:11] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:11] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:11] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:12] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:12] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:12] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:12] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:12] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:12] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:12] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:13] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:13] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:13] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:13] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:13] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:13] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:13] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:13] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:14] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:14] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:14] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:14] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:14] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:14] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:15] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:15] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:15] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:15] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:15] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:15] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:15] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:16] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:34:16] ::1:57340 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:37:11] ::1:53295 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:37:11] ::1:53295 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:37:11] ::1:53296 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:37:11] ::1:53296 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:37:11] ::1:53296 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:37:11] ::1:53296 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/get HTTP/1.1" 200
+[31mERROR[0m:    [11-11-2025 16:37:12] Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:37:12] ::1:53296 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:37:32] ::1:53305 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:37:32] ::1:53305 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:37:32] ::1:53306 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:37:32] ::1:53306 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:37:32] ::1:53306 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:37:32] ::1:53306 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:37:33] ::1:53306 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:22] ::1:59470 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:22] ::1:59470 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:22] ::1:59471 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:22] ::1:59471 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:22] ::1:59471 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:22] ::1:59471 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:23] ::1:59471 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:40] ::1:59480 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:40] ::1:59480 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:40] ::1:59481 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:40] ::1:59481 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:40] ::1:59481 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:40] ::1:59481 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:38:41] ::1:59481 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:39:15] ::1:54040 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:39:15] ::1:54040 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:39:15] ::1:54041 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:39:15] ::1:54041 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:39:15] ::1:54041 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:39:15] ::1:54041 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:39:15] ::1:54041 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:40:48] ::1:54064 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:40:48] ::1:54064 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:40:48] ::1:54065 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:40:48] ::1:54065 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [11-11-2025 16:40:48] Insert of existing embedding ID: chunk_0
+[33mWARNING[0m:  [11-11-2025 16:40:48] Add of existing embedding ID: chunk_0
+[32mINFO[0m:     [11-11-2025 16:40:48] ::1:54065 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:40:48] Insert of existing embedding ID: chunk_1
+[33mWARNING[0m:  [11-11-2025 16:40:48] Add of existing embedding ID: chunk_1
+[32mINFO[0m:     [11-11-2025 16:40:48] ::1:54065 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:40:48] Insert of existing embedding ID: chunk_2
+[33mWARNING[0m:  [11-11-2025 16:40:48] Add of existing embedding ID: chunk_2
+[32mINFO[0m:     [11-11-2025 16:40:48] ::1:54065 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:40:49] Insert of existing embedding ID: chunk_3
+[33mWARNING[0m:  [11-11-2025 16:40:49] Add of existing embedding ID: chunk_3
+[32mINFO[0m:     [11-11-2025 16:40:49] ::1:54065 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:40:49] Insert of existing embedding ID: chunk_4
+[33mWARNING[0m:  [11-11-2025 16:40:49] Add of existing embedding ID: chunk_4
+[32mINFO[0m:     [11-11-2025 16:40:49] ::1:54065 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:40:49] Insert of existing embedding ID: chunk_5
+[33mWARNING[0m:  [11-11-2025 16:40:49] Add of existing embedding ID: chunk_5
+[32mINFO[0m:     [11-11-2025 16:40:49] ::1:54065 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:40:49] Insert of existing embedding ID: chunk_6
+[33mWARNING[0m:  [11-11-2025 16:40:49] Add of existing embedding ID: chunk_6
+[32mINFO[0m:     [11-11-2025 16:40:49] ::1:54065 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:40:49] Insert of existing embedding ID: chunk_7
+[33mWARNING[0m:  [11-11-2025 16:40:49] Add of existing embedding ID: chunk_7
+[32mINFO[0m:     [11-11-2025 16:40:49] ::1:54065 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:40:49] Insert of existing embedding ID: chunk_8
+[33mWARNING[0m:  [11-11-2025 16:40:49] Add of existing embedding ID: chunk_8
+[32mINFO[0m:     [11-11-2025 16:40:49] ::1:54065 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:40:57] ::1:50142 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:40:57] ::1:50142 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:40:58] ::1:50143 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:40:58] ::1:50143 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:40:58] ::1:50143 - "GET /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:40:58] ::1:50143 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:40:58] ::1:50143 - "POST /api/v1/collections/66b9d2cf-600a-4703-a660-523fc07aaf38/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:43:28] ::1:54018 - "DELETE /api/v1/collections/collection HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:43:30] ::1:54019 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:43:45] ::1:58696 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:43:45] ::1:58696 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:43:45] ::1:58697 - "GET /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[31mERROR[0m:    [11-11-2025 16:43:45] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:43:45] ::1:58697 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:02] ::1:52311 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:02] ::1:52311 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:02] ::1:52312 - "GET /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:15] ::1:57633 - "GET /api/v1/collections HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:19] ::1:58081 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:19] ::1:58081 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:19] ::1:58082 - "GET /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:41] ::1:59483 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:41] ::1:59483 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:41] ::1:59484 - "GET /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:41] ::1:59484 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:41] ::1:59484 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [11-11-2025 16:44:41] Starting component PersistentLocalHnswSegment
+[31mERROR[0m:    [11-11-2025 16:44:41] Failed to send telemetry event CollectionAddEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:44:41] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:42] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:42] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:42] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:42] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:42] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:42] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:42] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:43] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:43] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:43] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:43] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:43] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:43] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:43] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:44] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:44] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:44] ::1:59484 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:44:59] ::1:49977 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:59] ::1:49977 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:59] ::1:49978 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:59] ::1:49978 - "GET /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:44:59] ::1:49978 - "GET /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/count HTTP/1.1" 200
+[31mERROR[0m:    [11-11-2025 16:44:59] Failed to send telemetry event CollectionGetEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:44:59] ::1:49978 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/get HTTP/1.1" 200
+[31mERROR[0m:    [11-11-2025 16:44:59] Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:44:59] ::1:49978 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:45:12] ::1:61362 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:45:12] ::1:61362 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:45:12] ::1:61363 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:45:12] ::1:61363 - "GET /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:45:12] ::1:61363 - "GET /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:45:12] ::1:61363 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:45:12] ::1:61363 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:46:34] ::1:63138 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:46:34] ::1:63138 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:46:34] ::1:63139 - "GET /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:46:34] ::1:63139 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:46:34] ::1:63139 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[33mWARNING[0m:  [11-11-2025 16:46:34] Insert of existing embedding ID: chunk_0
+[33mWARNING[0m:  [11-11-2025 16:46:34] Add of existing embedding ID: chunk_0
+[32mINFO[0m:     [11-11-2025 16:46:34] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:34] Insert of existing embedding ID: chunk_1
+[33mWARNING[0m:  [11-11-2025 16:46:34] Add of existing embedding ID: chunk_1
+[32mINFO[0m:     [11-11-2025 16:46:34] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:34] Insert of existing embedding ID: chunk_2
+[33mWARNING[0m:  [11-11-2025 16:46:34] Add of existing embedding ID: chunk_2
+[32mINFO[0m:     [11-11-2025 16:46:34] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:34] Insert of existing embedding ID: chunk_3
+[33mWARNING[0m:  [11-11-2025 16:46:34] Add of existing embedding ID: chunk_3
+[32mINFO[0m:     [11-11-2025 16:46:34] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:34] Insert of existing embedding ID: chunk_4
+[33mWARNING[0m:  [11-11-2025 16:46:34] Add of existing embedding ID: chunk_4
+[32mINFO[0m:     [11-11-2025 16:46:34] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:35] Insert of existing embedding ID: chunk_5
+[33mWARNING[0m:  [11-11-2025 16:46:35] Add of existing embedding ID: chunk_5
+[32mINFO[0m:     [11-11-2025 16:46:35] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:35] Insert of existing embedding ID: chunk_6
+[33mWARNING[0m:  [11-11-2025 16:46:35] Add of existing embedding ID: chunk_6
+[32mINFO[0m:     [11-11-2025 16:46:35] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:35] Insert of existing embedding ID: chunk_7
+[33mWARNING[0m:  [11-11-2025 16:46:35] Add of existing embedding ID: chunk_7
+[32mINFO[0m:     [11-11-2025 16:46:35] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:35] Insert of existing embedding ID: chunk_8
+[33mWARNING[0m:  [11-11-2025 16:46:35] Add of existing embedding ID: chunk_8
+[32mINFO[0m:     [11-11-2025 16:46:35] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:35] Insert of existing embedding ID: chunk_9
+[33mWARNING[0m:  [11-11-2025 16:46:35] Add of existing embedding ID: chunk_9
+[32mINFO[0m:     [11-11-2025 16:46:35] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:35] Insert of existing embedding ID: chunk_10
+[33mWARNING[0m:  [11-11-2025 16:46:35] Add of existing embedding ID: chunk_10
+[32mINFO[0m:     [11-11-2025 16:46:35] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:35] Insert of existing embedding ID: chunk_11
+[33mWARNING[0m:  [11-11-2025 16:46:35] Add of existing embedding ID: chunk_11
+[32mINFO[0m:     [11-11-2025 16:46:35] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:36] Insert of existing embedding ID: chunk_12
+[33mWARNING[0m:  [11-11-2025 16:46:36] Add of existing embedding ID: chunk_12
+[32mINFO[0m:     [11-11-2025 16:46:36] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:36] Insert of existing embedding ID: chunk_13
+[33mWARNING[0m:  [11-11-2025 16:46:36] Add of existing embedding ID: chunk_13
+[32mINFO[0m:     [11-11-2025 16:46:36] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:36] Insert of existing embedding ID: chunk_14
+[33mWARNING[0m:  [11-11-2025 16:46:36] Add of existing embedding ID: chunk_14
+[32mINFO[0m:     [11-11-2025 16:46:36] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[33mWARNING[0m:  [11-11-2025 16:46:36] Insert of existing embedding ID: chunk_15
+[33mWARNING[0m:  [11-11-2025 16:46:36] Add of existing embedding ID: chunk_15
+[32mINFO[0m:     [11-11-2025 16:46:36] ::1:63139 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:46:42] ::1:63157 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:46:42] ::1:63157 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:46:42] ::1:63158 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:46:42] ::1:63158 - "GET /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:46:42] ::1:63158 - "GET /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:46:42] ::1:63158 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:46:42] ::1:63158 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:18] ::1:56743 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:18] ::1:56743 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:18] ::1:56744 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:18] ::1:56744 - "GET /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:18] ::1:56744 - "GET /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:18] ::1:56744 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:18] ::1:56744 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:44] ::1:49878 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:44] ::1:49878 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:44] ::1:49879 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:44] ::1:49879 - "GET /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:44] ::1:49879 - "GET /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:44] ::1:49879 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:47:44] ::1:49879 - "POST /api/v1/collections/a481f399-8794-4ad2-8810-fcb431cd0920/query HTTP/1.1" 200
+[31mERROR[0m:    [11-11-2025 16:49:19] Collection example_collection does not exist.
+  + Exception Group Traceback (most recent call last):
+  |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_utils.py", line 79, in collapse_excgroups
+  |     yield
+  |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 192, in __call__
+  |     async with anyio.create_task_group() as task_group:
+  |                ~~~~~~~~~~~~~~~~~~~~~~~^^
+  |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 781, in __aexit__
+  |     raise BaseExceptionGroup(
+  |         "unhandled errors in a TaskGroup", self._exceptions
+  |     ) from None
+  | ExceptionGroup: unhandled errors in a TaskGroup (1 sub-exception)
+  +-+---------------- 1 ----------------
+    | Traceback (most recent call last):
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    |     return await call_next(request)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    |     with recv_stream, send_stream, collapse_excgroups():
+    |                                    ~~~~~~~~~~~~~~~~~~^^
+    |   File "C:\Users\nicholas.lee\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    |     self.gen.throw(value)
+    |     ~~~~~~~~~~~~~~^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_utils.py", line 85, in collapse_excgroups
+    |     raise exc
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    |     response = await self.dispatch_func(request, call_next)
+    |                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    |     return await call_next(request)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    |     raise app_exc from app_exc.__cause__ or app_exc.__context__
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    |     await self.app(scope, receive_or_disconnect, send_no_error)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    |     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    |     await self.middleware_stack(scope, receive, send)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    |     await route.handle(scope, receive, send)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    |     await self.app(scope, receive, send)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 125, in app
+    |     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    |     raise exc
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    |     await app(scope, receive, sender)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 111, in app
+    |     response = await f(request)
+    |                ^^^^^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 391, in app
+    |     raw_response = await run_endpoint_function(
+    |                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     ...<3 lines>...
+    |     )
+    |     ^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 292, in run_endpoint_function
+    |     return await run_in_threadpool(dependant.call, **values)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    |     return await anyio.to_thread.run_sync(func)
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    |     return await get_async_backend().run_sync_in_worker_thread(
+    |            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |         func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2485, in run_sync_in_worker_thread
+    |     return await future
+    |            ^^^^^^^^^^^^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 976, in run
+    |     result = context.run(func, *args)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    |     return f(*args, **kwargs)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\server\fastapi\__init__.py", line 479, in delete_collection
+    |     return self._api.delete_collection(
+    |            ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+    |         collection_name, tenant=tenant, database=database
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    |     )
+    |     ^
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    |     return f(*args, **kwargs)
+    |   File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\api\segment.py", line 347, in delete_collection
+    |     raise ValueError(f"Collection {name} does not exist.")
+    | ValueError: Collection example_collection does not exist.
+    +------------------------------------
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\server\fastapi\__init__.py", line 82, in catch_exceptions_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 191, in __call__
+    with recv_stream, send_stream, collapse_excgroups():
+                                   ~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\nicholas.lee\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 162, in __exit__
+    self.gen.throw(value)
+    ~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_utils.py", line 85, in collapse_excgroups
+    raise exc
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 193, in __call__
+    response = await self.dispatch_func(request, call_next)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\server\fastapi\__init__.py", line 96, in check_http_version_middleware
+    return await call_next(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 168, in call_next
+    raise app_exc from app_exc.__cause__ or app_exc.__context__
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\base.py", line 144, in coro
+    await self.app(scope, receive_or_disconnect, send_no_error)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\middleware\exceptions.py", line 63, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\middleware\asyncexitstack.py", line 18, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\routing.py", line 716, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\routing.py", line 736, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\routing.py", line 290, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 125, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 53, in wrapped_app
+    raise exc
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\_exception_handler.py", line 42, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 111, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 391, in app
+    raw_response = await run_endpoint_function(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\fastapi\routing.py", line 292, in run_endpoint_function
+    return await run_in_threadpool(dependant.call, **values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\starlette\concurrency.py", line 38, in run_in_threadpool
+    return await anyio.to_thread.run_sync(func)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\to_thread.py", line 56, in run_sync
+    return await get_async_backend().run_sync_in_worker_thread(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        func, args, abandon_on_cancel=abandon_on_cancel, limiter=limiter
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 2485, in run_sync_in_worker_thread
+    return await future
+           ^^^^^^^^^^^^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\anyio\_backends\_asyncio.py", line 976, in run
+    result = context.run(func, *args)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\auth\fastapi.py", line 241, in wrapped
+    return f(*args, **kwargs)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\server\fastapi\__init__.py", line 479, in delete_collection
+    return self._api.delete_collection(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        collection_name, tenant=tenant, database=database
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\telemetry\opentelemetry\__init__.py", line 127, in wrapper
+    return f(*args, **kwargs)
+  File "C:\Users\nicholas.lee\Documents\z\TKV_Kenji\Biz.TKV.EmbeddingProcess\venv\Lib\site-packages\chromadb\api\segment.py", line 347, in delete_collection
+    raise ValueError(f"Collection {name} does not exist.")
+ValueError: Collection example_collection does not exist.
+[32mINFO[0m:     [11-11-2025 16:49:19] ::1:56524 - "DELETE /api/v1/collections/example_collection HTTP/1.1" 500
+[32mINFO[0m:     [11-11-2025 16:49:28] ::1:56531 - "DELETE /api/v1/collections/collection HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:49:45] ::1:56533 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:49:45] ::1:56533 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:49:45] ::1:56534 - "GET /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[31mERROR[0m:    [11-11-2025 16:49:45] Failed to send telemetry event ClientCreateCollectionEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:49:45] ::1:56534 - "POST /api/v1/collections?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:49:45] ::1:56534 - "GET /api/v1/pre-flight-checks HTTP/1.1" 200
+[36mDEBUG[0m:    [11-11-2025 16:49:45] Starting component PersistentLocalHnswSegment
+[31mERROR[0m:    [11-11-2025 16:49:45] Failed to send telemetry event CollectionAddEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:49:45] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:45] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:45] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:45] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:45] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:45] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:46] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:46] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:46] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:46] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:46] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:46] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:47] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:47] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:47] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:47] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:47] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:47] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:47] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:47] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:48] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:48] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:48] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:48] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:48] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:48] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:48] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:48] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:49] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:49] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:49] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:49] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:49] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:49] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:49] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:50] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:50] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:50] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:50] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:50] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:50] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:50] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:51] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:51] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:51] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:51] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:51] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:51] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:51] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:52] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:52] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:52] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:52] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:52] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:52] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:52] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:53] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:53] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:53] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:53] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:53] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:53] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:53] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:54] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:54] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:54] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:54] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:54] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:54] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:55] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:55] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:55] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:55] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:55] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:55] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:55] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:56] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:56] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:56] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:56] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:56] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:56] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:56] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:57] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:57] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:57] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:57] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:57] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:57] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:57] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:58] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:58] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:58] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:58] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:58] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:58] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:59] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:59] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:49:59] ::1:56534 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/add HTTP/1.1" 201
+[32mINFO[0m:     [11-11-2025 16:50:19] ::1:56647 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:50:19] ::1:56647 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:50:19] ::1:56648 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:50:19] ::1:56648 - "GET /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:50:19] ::1:56648 - "GET /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/count HTTP/1.1" 200
+[31mERROR[0m:    [11-11-2025 16:50:19] Failed to send telemetry event CollectionGetEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:50:19] ::1:56648 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/get HTTP/1.1" 200
+[31mERROR[0m:    [11-11-2025 16:50:19] Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 16:50:19] ::1:56648 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:50:30] ::1:56655 - "GET /api/v1/tenants/default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:50:30] ::1:56655 - "GET /api/v1/databases/default_database?tenant=default_tenant HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:50:30] ::1:56656 - "GET /api/v1/collections/collection?tenant=default_tenant&database=default_database HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:50:30] ::1:56656 - "GET /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:50:30] ::1:56656 - "GET /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/count HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:50:30] ::1:56656 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/get HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 16:50:31] ::1:56656 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 17:02:34] Shutting down
+[32mINFO[0m:     [11-11-2025 17:02:34] Waiting for application shutdown.
+[36mDEBUG[0m:    [11-11-2025 17:02:34] Stopping component System
+[36mDEBUG[0m:    [11-11-2025 17:02:34] Stopping component SegmentAPI
+[36mDEBUG[0m:    [11-11-2025 17:02:34] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [11-11-2025 17:02:34] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [11-11-2025 17:02:34] Stopping component Posthog
+[36mDEBUG[0m:    [11-11-2025 17:02:34] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [11-11-2025 17:02:34] Stopping component SqliteDB
+[36mDEBUG[0m:    [11-11-2025 17:02:34] Stopping component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [11-11-2025 17:02:34] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [11-11-2025 17:02:34] Application shutdown complete.
+[32mINFO[0m:     [11-11-2025 17:02:34] Finished server process [[36m7352[0m]

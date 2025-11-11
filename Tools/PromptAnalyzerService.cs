@@ -97,80 +97,40 @@ namespace Biz.TKV.AIModelProcess.Tools
             _baseUrl = baseURL.TrimEnd('/');
             _model = model;
             _systemPrompt = systemPrompt ?? """
-ROLE: Intent extractor.
-OUTPUT: ONLY one valid JSON array. Nothing before '[' or after ']'. No code fences, prose, comments.
+            ROLE: Intent extractor.
 
-FIELDS (exact keys only): intent, subject, confidence, count, isLatest
-  intent: ShowDocument | ShowImage | ShowImageDocument | GenericQuestion | Other
-  subject: normalized form of the user's prompt text (see normalization rules below). Do NOT change its meaning.
-  confidence: 0.50–0.99 (two decimals, never 1.00)
-  count: integer >=1 (default 1; if there is request for multiple items, set 5)
-  isLatest: true | false (default true; always include; set false only when explicit evidence indicates non-latest)
+            OUTPUT Format: JSON array.
+            [
+                {
+                    "intent": "",
+                    "confidence": 0.90,
+                },
+                {
+                    "intent": "",
+                    "confidence": 0.85,
+                },
+                {
+                    "intent": "",
+                    "confidence": 0.92,
+                },
+                {
+                    "intent": "",
+                    "confidence": 0.88,
+                },
+                {
+                    "intent": "",
+                    "confidence": 0.91,
+                }
+            ]
 
-SUBJECT = NORMALIZED PROMPT (preserve meaning):
-- Build the subject by taking the user's prompt and applying ONLY these normalization steps. After these steps, the remaining tokens in their original order form the subject.
-  1) Lowercase the text, trim, collapse multiple spaces, remove punctuation except spaces.
-  2) Remove polite/command/filler words: show, display, list, give, fetch, retrieve, present, provide, please, kindly, explain, because, reason, reasons, explanation, tell me, tell, who, what, when, where, why, how, which.
-  3) Remove standalone function words and articles/prepositions when not part of a named entity: the, a, an, of, to, for, is, are, am, was, were, be, been, being.
-  4) Canonicalize ONLY the medium word: photo/picture/img -> images; file/doc/pdf -> documents.
-  5) Keep explicit ranking/year tokens exactly as written; if year appears, format as: year YYYY.
-- Forbidden: adding or changing domain words, paraphrasing, translating, expanding acronyms, or reordering tokens beyond the removals above.
-- Do NOT compress to a shorter noun phrase; the subject is the normalized prompt content (meaning preserved).
-- If your computed subject would omit meaningful tokens present in the normalized prompt, OUTPUT THE FULL NORMALIZED PROMPT as the subject.
-- If no clear domain noun exists after normalization, output [] (do NOT invent a generic subject).
-
-INTENT RULES:
-- Retrieval verbs (show|display|list|give|fetch|retrieve|present|provide|get) + document nouns => ShowDocument
-- Retrieval verbs + image nouns => ShowImage
-- Retrieval mentions of both document and image mediums for the same subject => ShowImageDocument
-- Pure analytical or comparative questions without explicit retrieval => GenericQuestion
-- Otherwise => Other
-
-MEDIUM NOUNS (synonyms ONLY for medium canonicalization):
-- Documents: document, documents, doc, file, files, pdf, plan, drawing, blueprint, report, record
-- Images: image, images, img, photo, photos, picture, pictures, pic, scan, scans, jpeg, jpg, png, tiff
-
-COUNT & RANKING EXTRACTION:
-- Count from: top N | highest N | lowest N | latest N | oldest N | first N | last N | bottom N | show me N ...
-- Ranking tokens: highest|lowest|top|latest|newest|oldest kept; if appears without number => count=1.
-- Example: "show me 3 latest document of passport" => count=3, subject "passport documents latest".
-
-ISLATEST DEFAULTING:
-- Default true. Set false if a year appears and year != current UTC year, or if words like oldest, earliest, previous, prior, historical, archived, past, older appear.
-
-DEDUPING POLICY:
-- Subjects must be UNIQUE across objects. Per subject, at most one retrieval intent (favor ShowImageDocument if both mediums) and one GenericQuestion.
-
-QUALITY CHECKS BEFORE OUTPUT:
-1) Subject equals the user's prompt after only the allowed normalization steps above (no added or changed domain tokens).
-2) Subject contains at least one domain noun or named entity (not only generic medium words).
-3) Subject may include verbs that are part of the original meaning; do not remove them unless they are in the filler/function stopword lists.
-4) If checks fail or prompt is only greeting/unclear => return []
-
-EXAMPLES (subject = normalized prompt):
-Input: Which government agencies are required to handle for sinkhole issue
-Output: [{"intent":"GenericQuestion","subject":"government agencies required handle sinkhole issue","confidence":0.90,"count":1,"isLatest":true}]
-
-Input: show the list of the passport documents
-Output: [{"intent":"ShowDocument","subject":"passport documents","confidence":0.90,"count":1,"isLatest":true}]
-
-Input: show images of the nric
-Output: [{"intent":"ShowImage","subject":"nric images","confidence":0.90,"count":1,"isLatest":true}]
-
-Input: list permit documents
-Output: [{"intent":"ShowDocument","subject":"permit documents","confidence":0.90,"count":1,"isLatest":true}]
-
-Input: why are the student scores so low in 2024
-Output: [{"intent":"GenericQuestion","subject":"student scores low year 2024","confidence":0.90,"count":1,"isLatest":false}]
-
-Input: show me documents
-Output: []
-
-Input: hello there how are you?
-Output: []
-
-Return ONLY the JSON array.
-""";
+            INSTRUCTIONS:
+            1. Extract intents from the user's prompt.
+            2. Provide the output strictly in the specified JSON array format.
+            3. Each intent object must include:
+               - "intent": The extracted intents from the user's prompt.
+               - "confidence": A confidence score between 0 and 1 indicating the certainty of the intent.
+            4. Generate 5 intent objects always, even if confidence is low.
+            """;
             _httpClient = new HttpClient();
             _maxRetries = Math.Max(0, maxRetries);
             _initialRetryDelayMs = Math.Max(0, initialRetryDelayMs);
