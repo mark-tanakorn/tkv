@@ -11,44 +11,52 @@ class Program
 {
     static async Task Main(string[] args)
     {
+        
         // Example prompt to analyze
-        string userPrompt = "What is entanglement?";
+        string userPrompt = "What does superposition mean in quantum physics? In 1 word.";
 
         // Call the AnalyzePrompt function
-        var (intent, subject, APinputToken, APoutputToken) = await AnalyzePrompt(userPrompt);
+        var (intent, subject) = await AnalyzePrompt(userPrompt);
 
         // Call the RefineSubject function
-        var (refinedSubject, RSinputToken, RSoutputToken) = RefineSubject(subject);
+        var refinedSubject = RefineSubject(subject);
 
         // Call the EmbedSubject function
-        var (embeddedIntentRefinedSubject, ESinputToken, ESoutputToken) = EmbedSubject(intent + " " + refinedSubject);
+        var embeddedSubject = EmbedSubject(refinedSubject);
 
         // Call the ExtractContent function
-        var extractedContent = ExtractContent(embeddedIntentRefinedSubject);
+        var extractedContent = ExtractContent(embeddedSubject);
 
         // Construct the final prompt
         var finalPrompt = "User's Query: \n[" + userPrompt + "]\n\nIntent: \n[" + intent + "]\n\nRelevant Information: \n[" + extractedContent + "]\n\nInstructions: \n1. Using the intent and relevant information, provide a clear, concise, and accurate answer to the user's query. \n2. If the information is insufficient, say so politely. \n3. Keep the response natural and directly address the query. \n4. IMPORTANT: Respond in plain text only. \n5. IMPORTANT: Do not use any markdown formatting, bold (**text**), italics (*text*), or special characters like **, *, _, etc. \n6. IMPORTANT: Avoid all formatting.";
-        Console.WriteLine(finalPrompt);
 
         // Prompt LLM with finalPrompt
-        var (response, PLinputToken, PLoutputToken) = PromptLLM(finalPrompt);
-        Console.WriteLine("\nLLM Response: \n" + response + "\n");
+        var (response, totalMaxTokens, estimatedInputTokens, maxTokens, inputTokens, outputTokens) = PromptLLM(finalPrompt);
 
-        Console.WriteLine($"AnalyzePrompt - Input: {APinputToken}, Output: {APoutputToken}");
-        Console.WriteLine($"RefineSubject - Input: {RSinputToken}, Output: {RSoutputToken}");
-        Console.WriteLine($"EmbedSubject - Input: {ESinputToken}, Output: {ESoutputToken}");
-        Console.WriteLine($"PromptLLM - Input: {PLinputToken}, Output: {PLoutputToken}");
-        Console.WriteLine($"Total Tokens: {APinputToken + APoutputToken + RSinputToken + RSoutputToken + ESinputToken + ESoutputToken + PLinputToken + PLoutputToken}");
+        Console.WriteLine("\n===============================\n");
+        Console.WriteLine("Intent: " + intent);
+        Console.WriteLine("Subject: " + subject);
+        Console.WriteLine("Refined Subject: " + refinedSubject);
+        Console.WriteLine("Extracted Content: " + extractedContent);
+        Console.WriteLine("\n===============================\n");
+        Console.WriteLine("Final Prompt: \n" + finalPrompt);
+        Console.WriteLine("\n===============================\n");
+        Console.WriteLine("LLM Response: \n" + response);
+        Console.WriteLine("\n===============================\n");
+        Console.WriteLine($"Total Max Tokens: {totalMaxTokens}");
+        Console.WriteLine($"Estimated Input Tokens: {estimatedInputTokens} - Max Tokens for Output: {maxTokens}");
+        Console.WriteLine($"Actual Input Tokens: {inputTokens} - Actual Output Tokens: {outputTokens}");
     }
 
-    static async Task<(string Intent, string Subject, int InputTokens, int OutputTokens)> AnalyzePrompt(string userPrompt)
+    static async Task<(string Intent, string Subject)> AnalyzePrompt(string userPrompt)
     {
         // Initialize the PromptAnalyzerService with default parameters
         var promptAnalyzerService = new PromptAnalyzerService(
             baseURL: "https://192.168.118.23/",
             model: "qwen3:14b",
             maxRetries: 2,
-            initialRetryDelayMs: 300
+            initialRetryDelayMs: 300,
+            generationOptions: new GenerationOptions { Temperature = 0.8, TopP = 0.95 }
         );
 
         // Call the AnalyzeAsync method and get the result
@@ -60,21 +68,22 @@ class Program
             var highestConfidenceIntent = result.Intents.OrderByDescending(i => i.Confidence).FirstOrDefault();
             if (highestConfidenceIntent != null)
             {
-                return (highestConfidenceIntent.Intent, highestConfidenceIntent.Subject, result.Usage.InputTokens, result.Usage.OutputTokens);
+                return (highestConfidenceIntent.Intent, highestConfidenceIntent.Subject);
             }
         }
 
-        return ("NoIntent", "NoSubject", 0, 0);
+        return ("NoIntent", "NoSubject");
     }
 
-    static (string RefinedText, int InputTokens, int OutputTokens) RefineSubject(string subject)
+    static string RefineSubject(string subject)
     {
         // Initialize the RefinedFactory with default parameters
         var refinedModel = new RefinedModel
         {
             HostAPIUrl = "https://192.168.118.23",
             Model = "qwen3:14b",
-            RefinerText = "Refine prompt into concise, clear, firm. Output only refined prompt: {0}"
+            RefinerText = "Refine prompt into concise, clear, firm. Output only refined prompt: {0}",
+            Options = new { temperature = 0.3, top_p = 0.7 }
         };
 
         var refinedFactory = new RefinedFactory(refinedModel);
@@ -84,13 +93,13 @@ class Program
 
         if (!string.IsNullOrEmpty(refinedResponse.RefinedText))
         {
-            return (refinedResponse.RefinedText, refinedResponse.PromptToken ?? 0, refinedResponse.CompletionToken ?? 0);
+            return (refinedResponse.RefinedText);
         }
 
-        return ("NoRefinedSubject", 0, 0);
+        return ("NoRefinedSubject");
     }
 
-    static (string EmbeddedText, int InputTokens, int OutputTokens) EmbedSubject(string intentRefinedSubject)
+    static string EmbedSubject(string refinedSubject)
     {
         // Initialize the EmbeddingFactory with default parameters
         var embeddingModel = new EmbeddingModel
@@ -102,20 +111,20 @@ class Program
         var embeddingFactory = new EmbeddingFactory(embeddingModel);
 
         // Get the embedding
-        var embeddingResponse = embeddingFactory.GetTextEmbedding(intentRefinedSubject);
+        var embeddingResponse = embeddingFactory.GetTextEmbedding(refinedSubject);
 
         if (embeddingResponse.StatusCode.StartsWith("Error"))
         {
-            return ("Embedding failed: " + embeddingResponse.StatusCode, 0, 0);
+            return "Embedding failed: " + embeddingResponse.StatusCode;
         }
 
-        return (embeddingResponse.EmbeddedText, embeddingResponse.PromptToken ?? 0, embeddingResponse.CompletionToken ?? 0);
+        return embeddingResponse.EmbeddedText;
     }
 
-    static string ExtractContent(string embeddedIntentRefinedSubject)
+    static string ExtractContent(string embeddedSubject)
     {
         // Parse the embedding string to a list of floats
-        var embeddingString = embeddedIntentRefinedSubject.Trim('[', ']');
+        var embeddingString = embeddedSubject.Trim('[', ']');
         var embeddingValues = embeddingString.Split(',').Select(s => double.Parse(s.Trim())).ToList();
 
         // Prepare the query payload for ChromaDB
@@ -168,13 +177,20 @@ class Program
         }
     }
 
-    static (string Response, int InputTokens, int OutputTokens) PromptLLM(string finalPrompt)
+    static (string Response, int TotalMaxTokens, int EstimatedInputTokens, int MaxTokens, int InputTokens, int OutputTokens) PromptLLM(string finalPrompt)
     {
+        const int totalMaxTokens = 2000;
+        int estimatedInputTokens = (int)Math.Ceiling(finalPrompt.Length / 4.5);
+        int maxTokens = Math.Max(totalMaxTokens - estimatedInputTokens, 1); // Ensure at least 1
+
         using var httpClient = new HttpClient();
         var payload = new
         {
             model = "qwen3:14b",
-            messages = new[] { new { role = "user", content = finalPrompt } }
+            messages = new[] { new { role = "user", content = finalPrompt } },
+            temperature = 0.3,
+            top_p = 0.7,
+            max_tokens = maxTokens
         };
         var jsonPayload = JsonSerializer.Serialize(payload);
         var content = new StringContent(jsonPayload, System.Text.Encoding.UTF8, "application/json");
@@ -197,14 +213,14 @@ class Program
                 if (result.TryGetProperty("choices", out var choices) && choices.GetArrayLength() > 0)
                 {
                     var message = choices[0].GetProperty("message");
-                    return (message.GetProperty("content").GetString() ?? "No response", inputTokens, outputTokens);
+                    return (message.GetProperty("content").GetString() ?? "No response", totalMaxTokens, estimatedInputTokens, maxTokens, inputTokens, outputTokens);
                 }
             }
-            return ("LLM Error: " + response.StatusCode, 0, 0);
+            return ("LLM Error: " + response.StatusCode, totalMaxTokens, estimatedInputTokens, maxTokens, 0, 0);
         }
         catch (Exception ex)
         {
-            return ("Error: " + ex.Message, 0, 0);
+            return ("Error: " + ex.Message, totalMaxTokens, estimatedInputTokens, maxTokens, 0, 0);
         }
     }
 }

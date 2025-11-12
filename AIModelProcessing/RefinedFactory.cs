@@ -33,8 +33,13 @@ namespace Biz.TKV.AIModelProcess
                     _Model = refinedModel.Model;
                 if (!string.IsNullOrEmpty(refinedModel.RefinerText))
                     _refinerText = refinedModel.RefinerText;
+                _options = refinedModel.Options;
             }
         }
+
+        private double _temperature = 0.2;
+        private double _topP = 0.8;
+        private object _options;
 
         public RefinedResponse GetRefinedText(string text)
         {
@@ -57,7 +62,11 @@ namespace Biz.TKV.AIModelProcess
                 {
                     model = _Model,
                     prompt = refinederText,
-                    stream = false
+                    stream = false,
+                    options = _options ?? new {
+                        temperature = _temperature,
+                        top_p = _topP
+                    }
                 };
 
                 var json = JsonConvert.SerializeObject(requestData);
@@ -94,6 +103,15 @@ namespace Biz.TKV.AIModelProcess
         public string HostAPIUrl { get; set; }
         public string Model { get; set; }
         public string RefinerText { get; set; }
+        public object Options { get; set; }
+    }
+    public class generationOptions
+    {
+        public string HostAPIUrl { get; set; }
+        public string Model { get; set; }
+        public string RefinerText { get; set; }
+        public double Temperature { get; set; } = 0.2;
+        public double TopP { get; set; } = 0.8;
     }
 
     public class RefinedResponse
