@@ -1131,3 +1131,123 @@ ValueError: Collection example_collection does not exist.
 [32mINFO[0m:     [12-11-2025 14:13:44] ::1:53440 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
 [32mINFO[0m:     [12-11-2025 14:15:57] ::1:50343 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
 [32mINFO[0m:     [12-11-2025 14:28:34] ::1:53749 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[33mWARNING[0m:  [12-11-2025 14:45:15] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [12-11-2025 14:45:17] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [12-11-2025 14:45:17] Starting component System
+[36mDEBUG[0m:    [12-11-2025 14:45:17] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [12-11-2025 14:45:17] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [12-11-2025 14:45:17] Starting component SqliteDB
+[36mDEBUG[0m:    [12-11-2025 14:45:17] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [12-11-2025 14:45:17] Starting component Posthog
+[36mDEBUG[0m:    [12-11-2025 14:45:17] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [12-11-2025 14:45:17] Starting component SegmentAPI
+[32mINFO[0m:     [12-11-2025 14:45:17] Started server process [[36m18400[0m]
+[32mINFO[0m:     [12-11-2025 14:45:17] Waiting for application startup.
+[32mINFO[0m:     [12-11-2025 14:45:17] Application startup complete.
+[32mINFO[0m:     [12-11-2025 14:45:17] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[36mDEBUG[0m:    [12-11-2025 14:47:06] Starting component PersistentLocalHnswSegment
+[31mERROR[0m:    [12-11-2025 14:47:07] Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [12-11-2025 14:47:07] ::1:59810 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 14:48:35] ::1:59837 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 14:51:27] ::1:54384 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 14:56:02] ::1:65040 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 14:58:32] ::1:58389 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 15:02:15] ::1:60512 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 15:03:45] ::1:60558 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 15:30:57] ::1:62183 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 15:44:13] ::1:62249 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 15:45:32] ::1:57762 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 15:49:14] ::1:57019 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 15:57:42] ::1:53496 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 15:58:30] ::1:65351 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 15:59:41] ::1:57665 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 16:01:35] ::1:57705 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 16:04:07] ::1:61115 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 16:05:05] ::1:54268 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 16:11:00] ::1:60480 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 16:12:34] ::1:60511 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 16:17:32] ::1:55566 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 16:18:55] ::1:60322 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 16:20:18] ::1:53822 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 16:41:21] Shutting down
+[32mINFO[0m:     [12-11-2025 16:41:21] Waiting for application shutdown.
+[36mDEBUG[0m:    [12-11-2025 16:41:21] Stopping component System
+[36mDEBUG[0m:    [12-11-2025 16:41:21] Stopping component SegmentAPI
+[36mDEBUG[0m:    [12-11-2025 16:41:21] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [12-11-2025 16:41:21] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [12-11-2025 16:41:21] Stopping component Posthog
+[36mDEBUG[0m:    [12-11-2025 16:41:21] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [12-11-2025 16:41:21] Stopping component SqliteDB
+[36mDEBUG[0m:    [12-11-2025 16:41:21] Stopping component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [12-11-2025 16:41:21] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [12-11-2025 16:41:21] Application shutdown complete.
+[32mINFO[0m:     [12-11-2025 16:41:21] Finished server process [[36m18400[0m]
+[33mWARNING[0m:  [12-11-2025 16:41:40] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [12-11-2025 16:41:40] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [12-11-2025 16:41:40] Starting component System
+[36mDEBUG[0m:    [12-11-2025 16:41:40] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [12-11-2025 16:41:40] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [12-11-2025 16:41:40] Starting component SqliteDB
+[36mDEBUG[0m:    [12-11-2025 16:41:40] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [12-11-2025 16:41:40] Starting component Posthog
+[36mDEBUG[0m:    [12-11-2025 16:41:40] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [12-11-2025 16:41:40] Starting component SegmentAPI
+[32mINFO[0m:     [12-11-2025 16:41:40] Started server process [[36m14100[0m]
+[32mINFO[0m:     [12-11-2025 16:41:40] Waiting for application startup.
+[32mINFO[0m:     [12-11-2025 16:41:40] Application startup complete.
+[32mINFO[0m:     [12-11-2025 16:41:40] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[33mWARNING[0m:  [12-11-2025 16:56:09] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [12-11-2025 16:56:09] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [12-11-2025 16:56:09] Starting component System
+[36mDEBUG[0m:    [12-11-2025 16:56:09] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [12-11-2025 16:56:09] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [12-11-2025 16:56:09] Starting component SqliteDB
+[36mDEBUG[0m:    [12-11-2025 16:56:09] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [12-11-2025 16:56:09] Starting component Posthog
+[36mDEBUG[0m:    [12-11-2025 16:56:09] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [12-11-2025 16:56:09] Starting component SegmentAPI
+[32mINFO[0m:     [12-11-2025 16:56:09] Started server process [[36m19996[0m]
+[32mINFO[0m:     [12-11-2025 16:56:09] Waiting for application startup.
+[32mINFO[0m:     [12-11-2025 16:56:09] Application startup complete.
+[32mINFO[0m:     [12-11-2025 16:56:09] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[36mDEBUG[0m:    [12-11-2025 17:09:08] Starting component PersistentLocalHnswSegment
+[31mERROR[0m:    [12-11-2025 17:09:08] Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [12-11-2025 17:09:08] ::1:56464 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 17:10:17] ::1:49863 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[33mWARNING[0m:  [12-11-2025 17:11:39] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [12-11-2025 17:11:39] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Starting component System
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Starting component SqliteDB
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Starting component Posthog
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Starting component SegmentAPI
+[32mINFO[0m:     [12-11-2025 17:11:39] Started server process [[36m23656[0m]
+[32mINFO[0m:     [12-11-2025 17:11:39] Waiting for application startup.
+[32mINFO[0m:     [12-11-2025 17:11:39] Application startup complete.
+[31mERROR[0m:    [12-11-2025 17:11:39] [Errno 10048] error while attempting to bind on address ('::1', 8000, 0, 0): [winerror 10048] only one usage of each socket address (protocol/network address/port) is normally permitted
+[32mINFO[0m:     [12-11-2025 17:11:39] Waiting for application shutdown.
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Stopping component System
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Stopping component SegmentAPI
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Stopping component Posthog
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Stopping component SqliteDB
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Stopping component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [12-11-2025 17:11:39] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [12-11-2025 17:11:39] Application shutdown complete.
+[32mINFO[0m:     [12-11-2025 17:12:00] Shutting down
+[32mINFO[0m:     [12-11-2025 17:12:00] Waiting for application shutdown.
+[36mDEBUG[0m:    [12-11-2025 17:12:00] Stopping component System
+[36mDEBUG[0m:    [12-11-2025 17:12:00] Stopping component SegmentAPI
+[36mDEBUG[0m:    [12-11-2025 17:12:00] Stopping component PersistentLocalHnswSegment
+[36mDEBUG[0m:    [12-11-2025 17:12:00] Stopping component LocalSegmentManager
+[36mDEBUG[0m:    [12-11-2025 17:12:00] Stopping component Posthog
+[36mDEBUG[0m:    [12-11-2025 17:12:00] Stopping component QuotaEnforcer
+[36mDEBUG[0m:    [12-11-2025 17:12:00] Stopping component SqliteDB
+[36mDEBUG[0m:    [12-11-2025 17:12:00] Stopping component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [12-11-2025 17:12:00] Stopping component OpenTelemetryClient
+[32mINFO[0m:     [12-11-2025 17:12:00] Application shutdown complete.
+[32mINFO[0m:     [12-11-2025 17:12:00] Finished server process [[36m19996[0m]

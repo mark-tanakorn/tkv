@@ -6,40 +6,46 @@ using Biz.TKV.AIModelProcess;
 using System.Text.Json;
 using System.Net.Http;
 using System.Text.RegularExpressions;
+using System.IO;
+using Microsoft.Extensions.Configuration;
 
 class Program
 {
     static async Task Main(string[] args)
     {
-        
-        // Example prompt to analyze
-        string userPrompt = "What does superposition mean in quantum physics? In 1 word.";
+        // Load configuration settings from appsettings.json
+        var config = new ConfigurationBuilder()
+            .SetBasePath(AppContext.BaseDirectory)
+            .AddJsonFile("appsettings.json", optional: false)
+            .Build();
+
+        // Retrieve the user prompt from configuration
+        string userPrompt = config["userPrompt"];
 
         // Call the AnalyzePrompt function
-        var (intent, subject) = await AnalyzePrompt(userPrompt);
+        var (intent, subject) = await AnalyzePrompt(config, userPrompt);
 
         // Call the RefineSubject function
-        var refinedSubject = RefineSubject(subject);
+        var refinedSubject = RefineSubject(config, subject);
 
         // Call the EmbedSubject function
-        var embeddedSubject = EmbedSubject(refinedSubject);
+        var embeddedSubject = EmbedSubject(config, refinedSubject);
 
         // Call the ExtractContent function
-        var extractedContent = ExtractContent(embeddedSubject);
+        var extractedContent = ExtractContent(config, embeddedSubject);
 
         // Construct the final prompt
         var finalPrompt = "User's Query: \n[" + userPrompt + "]\n\nIntent: \n[" + intent + "]\n\nRelevant Information: \n[" + extractedContent + "]\n\nInstructions: \n1. Using the intent and relevant information, provide a clear, concise, and accurate answer to the user's query. \n2. If the information is insufficient, say so politely. \n3. Keep the response natural and directly address the query. \n4. IMPORTANT: Respond in plain text only. \n5. IMPORTANT: Do not use any markdown formatting, bold (**text**), italics (*text*), or special characters like **, *, _, etc. \n6. IMPORTANT: Avoid all formatting.";
 
         // Prompt LLM with finalPrompt
-        var (response, totalMaxTokens, estimatedInputTokens, maxTokens, inputTokens, outputTokens) = PromptLLM(finalPrompt);
+        var (response, totalMaxTokens, estimatedInputTokens, maxTokens, inputTokens, outputTokens) = PromptLLM(config, finalPrompt);
 
         Console.WriteLine("\n===============================\n");
-        Console.WriteLine("Intent: " + intent);
+        Console.WriteLine("Prompt: " + userPrompt);
         Console.WriteLine("Subject: " + subject);
         Console.WriteLine("Refined Subject: " + refinedSubject);
-        Console.WriteLine("Extracted Content: " + extractedContent);
         Console.WriteLine("\n===============================\n");
-        Console.WriteLine("Final Prompt: \n" + finalPrompt);
+        Console.WriteLine(finalPrompt);
         Console.WriteLine("\n===============================\n");
         Console.WriteLine("LLM Response: \n" + response);
         Console.WriteLine("\n===============================\n");
@@ -48,15 +54,23 @@ class Program
         Console.WriteLine($"Actual Input Tokens: {inputTokens} - Actual Output Tokens: {outputTokens}");
     }
 
-    static async Task<(string Intent, string Subject)> AnalyzePrompt(string userPrompt)
+    static async Task<(string Intent, string Subject)> AnalyzePrompt(IConfiguration config, string userPrompt)
     {
-        // Initialize the PromptAnalyzerService with default parameters
+        // Retrieve configuration settings for the PromptAnalyzerService
+        string baseURL = config["AnalyzePromptSettings:baseURL"];
+        string model = config["AnalyzePromptSettings:model"];
+        int maxRetries = int.Parse(config["AnalyzePromptSettings:maxRetries"]);
+        int initialRetryDelayMs = int.Parse(config["AnalyzePromptSettings:initialRetryDelayMs"]);
+        double Temperature = double.Parse(config["AnalyzePromptSettings:Temperature"]);
+        double TopP = double.Parse(config["AnalyzePromptSettings:TopP"]);
+
+        // Initialize the PromptAnalyzerService
         var promptAnalyzerService = new PromptAnalyzerService(
-            baseURL: "https://192.168.118.23/",
-            model: "qwen3:14b",
-            maxRetries: 2,
-            initialRetryDelayMs: 300,
-            generationOptions: new GenerationOptions { Temperature = 0.8, TopP = 0.95 }
+            baseURL: baseURL,
+            model: model,
+            maxRetries: maxRetries,
+            initialRetryDelayMs: initialRetryDelayMs,
+            generationOptions: new GenerationOptions { Temperature = Temperature, TopP = TopP }
         );
 
         // Call the AnalyzeAsync method and get the result
@@ -71,58 +85,66 @@ class Program
                 return (highestConfidenceIntent.Intent, highestConfidenceIntent.Subject);
             }
         }
-
         return ("NoIntent", "NoSubject");
     }
 
-    static string RefineSubject(string subject)
+    static string RefineSubject(IConfiguration config, string subject)
     {
-        // Initialize the RefinedFactory with default parameters
+        // Retrieve configuration settings for the RefinedFactory
+        string HostAPIUrl = config["RefineSubjectSettings:HostAPIUrl"];
+        string Model = config["RefineSubjectSettings:Model"];
+        string RefinerText = config["RefineSubjectSettings:RefinerText"];
+        double Temperature = double.Parse(config["RefineSubjectSettings:Temperature"]);
+        double TopP = double.Parse(config["RefineSubjectSettings:TopP"]);
+
+        // Initialize the RefinedFactory
         var refinedModel = new RefinedModel
         {
-            HostAPIUrl = "https://192.168.118.23",
-            Model = "qwen3:14b",
-            RefinerText = "Refine prompt into concise, clear, firm. Output only refined prompt: {0}",
-            Options = new { temperature = 0.3, top_p = 0.7 }
+            HostAPIUrl = HostAPIUrl,
+            Model = Model,
+            RefinerText = RefinerText,
+            Options = new { Temperature, TopP }
         };
-
-        var refinedFactory = new RefinedFactory(refinedModel);
 
         // Get the refined text
+        var refinedFactory = new RefinedFactory(refinedModel);
         var refinedResponse = refinedFactory.GetRefinedText(subject);
-
         if (!string.IsNullOrEmpty(refinedResponse.RefinedText))
         {
-            return (refinedResponse.RefinedText);
+            return refinedResponse.RefinedText;
         }
-
-        return ("NoRefinedSubject");
+        return "NoRefinedSubject";
     }
 
-    static string EmbedSubject(string refinedSubject)
+    static string EmbedSubject(IConfiguration config, string refinedSubject)
     {
-        // Initialize the EmbeddingFactory with default parameters
+        // Retrieve configuration settings for the EmbeddingFactory
+        string HostAPIUrl = config["EmbedSubjectSettings:HostAPIUrl"];
+        string TextModel = config["EmbedSubjectSettings:TextModel"];
+
+        // Initialize the EmbeddingFactory
         var embeddingModel = new EmbeddingModel
         {
-            HostAPIUrl = "https://192.168.118.23",
-            TextModel = "bge-m3"
+            HostAPIUrl = HostAPIUrl,
+            TextModel = TextModel
         };
 
-        var embeddingFactory = new EmbeddingFactory(embeddingModel);
-
         // Get the embedding
+        var embeddingFactory = new EmbeddingFactory(embeddingModel);
         var embeddingResponse = embeddingFactory.GetTextEmbedding(refinedSubject);
-
         if (embeddingResponse.StatusCode.StartsWith("Error"))
         {
             return "Embedding failed: " + embeddingResponse.StatusCode;
         }
-
         return embeddingResponse.EmbeddedText;
     }
 
-    static string ExtractContent(string embeddedSubject)
+    static string ExtractContent(IConfiguration config, string embeddedSubject)
     {
+        // Retrieve configuration settings from appsettings.json
+        int n_results = int.Parse(config["ExtractContentSettings:n_results"]);
+        string db_API = config["ExtractContentSettings:db_API"];
+
         // Parse the embedding string to a list of floats
         var embeddingString = embeddedSubject.Trim('[', ']');
         var embeddingValues = embeddingString.Split(',').Select(s => double.Parse(s.Trim())).ToList();
@@ -131,29 +153,29 @@ class Program
         var queryPayload = new
         {
             query_embeddings = new[] { embeddingValues },
-            n_results = 5  // Get the top 5 results
+            n_results
         };
-
         var jsonPayload = JsonSerializer.Serialize(queryPayload);
-
         using var httpClient = new HttpClient();
         var content = new StringContent(jsonPayload, System.Text.Encoding.UTF8, "application/json");
 
         try
         {
-            var response = httpClient.PostAsync("http://localhost:8000/api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query", content).Result;
+            // Send the query to ChromaDB
+            var response = httpClient.PostAsync(db_API, content).Result;
             if (response.IsSuccessStatusCode)
             {
+                // Deserialize the JSON response from the HTTP request into a JsonElement
                 var responseJson = response.Content.ReadAsStringAsync().Result;
                 var result = JsonSerializer.Deserialize<JsonElement>(responseJson);
 
-                // Extract the top chunks from metadatas
+                // Extract the top chunks from metadata
                 if (result.TryGetProperty("metadatas", out var metadatas) &&
                     metadatas.GetArrayLength() > 0 &&
                     metadatas[0].GetArrayLength() > 0)
                 {
                     var extractedChunks = new System.Collections.Generic.List<string>();
-                    for (int i = 0; i < metadatas[0].GetArrayLength(); i++) // Process all returned results (up to 5)
+                    for (int i = 0; i < metadatas[0].GetArrayLength(); i++)
                     {
                         var metadata = metadatas[0][i];
                         if (metadata.TryGetProperty("chunk", out var chunk))
@@ -177,19 +199,28 @@ class Program
         }
     }
 
-    static (string Response, int TotalMaxTokens, int EstimatedInputTokens, int MaxTokens, int InputTokens, int OutputTokens) PromptLLM(string finalPrompt)
+    static (string Response, int TotalMaxTokens, int EstimatedInputTokens, int MaxTokens, int InputTokens, int OutputTokens) PromptLLM(IConfiguration config, string finalPrompt)
     {
-        const int totalMaxTokens = 2000;
-        int estimatedInputTokens = (int)Math.Ceiling(finalPrompt.Length / 4.5);
-        int maxTokens = Math.Max(totalMaxTokens - estimatedInputTokens, 1); // Ensure at least 1
+        // Retrieve configuration settings from appsettings.json
+        int totalMaxTokens = int.Parse(config["PromptLLMSettings:totalMaxTokens"]);
+        double char2TokenRatio = double.Parse(config["PromptLLMSettings:char2TokenRatio"]);
+        string model = config["PromptLLMSettings:model"];
+        double Temperature = double.Parse(config["PromptLLMSettings:Temperature"]);
+        double TopP = double.Parse(config["PromptLLMSettings:TopP"]);
+        string llm_api = config["PromptLLMSettings:llm_api"];
 
+        // Calculate the estimated input tokens and maximum tokens for the response
+        int estimatedInputTokens = (int)Math.Ceiling(finalPrompt.Length / char2TokenRatio);
+        int maxTokens = Math.Max(totalMaxTokens - estimatedInputTokens, 1);
+
+        // Create the HTTP payload and content for the LLM API request
         using var httpClient = new HttpClient();
         var payload = new
         {
-            model = "qwen3:14b",
+            model,
             messages = new[] { new { role = "user", content = finalPrompt } },
-            temperature = 0.3,
-            top_p = 0.7,
+            Temperature,
+            TopP,
             max_tokens = maxTokens
         };
         var jsonPayload = JsonSerializer.Serialize(payload);
@@ -197,12 +228,15 @@ class Program
 
         try
         {
-            var response = httpClient.PostAsync("https://192.168.118.23/v1/chat/completions", content).Result;
+            // Send the prompt to the LLM API
+            var response = httpClient.PostAsync(llm_api, content).Result;
             if (response.IsSuccessStatusCode)
             {
+                // Deserialize the JSON response from the HTTP request into a JsonElement
                 var responseJson = response.Content.ReadAsStringAsync().Result;
                 var result = JsonSerializer.Deserialize<JsonElement>(responseJson);
 
+                // Extract token usage and response content from the API result
                 int inputTokens = 0, outputTokens = 0;
                 if (result.TryGetProperty("usage", out var usage))
                 {
