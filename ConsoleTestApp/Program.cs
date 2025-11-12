@@ -12,23 +12,28 @@ class Program
     static async Task Main(string[] args)
     {
         // Example prompt to analyze
-        string userPrompt = "What is a blackhole? I have an exam in 5 minutes and need a clear and concise explanation.";
+        string userPrompt = "What is entanglement?";
 
         // Call the AnalyzePrompt function
         var (intent, subject) = await AnalyzePrompt(userPrompt);
-        Console.WriteLine("Intent: " + intent);
-        Console.WriteLine("Subject: " + subject);
+        // Console.WriteLine("Intent: " + intent);
+        // Console.WriteLine("Subject: " + subject);
 
         // Call the RefineSubject function
         var refinedSubject = RefineSubject(subject);
-        Console.WriteLine("Refined Subject: " + refinedSubject);
+        // Console.WriteLine("Refined Subject: " + refinedSubject);
 
         // Call the EmbedSubject function
         var embeddedIntentRefinedSubject = EmbedSubject(intent + " " + refinedSubject);
 
         // Call the ExtractContent function
         var extractedContent = ExtractContent(embeddedIntentRefinedSubject);
-        Console.WriteLine("Extracted Content: " + extractedContent);
+        var finalPrompt = "User's Query: \n[" + userPrompt + "]\n\nIntent: \n[" + intent + "]\n\nRelevant Information: \n[" + extractedContent + "]\n\nInstructions: \n1. Using the intent and relevant information, provide a clear, concise, and accurate answer to the user's query. \n2. If the information is insufficient, say so politely. \n3. Keep the response natural and directly address the query. \n4. IMPORTANT: Respond in plain text only. \n5. IMPORTANT: Do not use any markdown formatting, bold (**text**), italics (*text*), or special characters like **, *, _, etc. \n6. IMPORTANT: Avoid all formatting.";
+        Console.WriteLine(finalPrompt);
+
+        // Prompt LLM with finalPrompt
+        var response = promptLLM(finalPrompt);
+        Console.WriteLine("\nLLM Response: \n" + response);
     }
 
     static async Task<(string Intent, string Subject)> AnalyzePrompt(string userPrompt)
@@ -151,6 +156,38 @@ class Program
                 }
             }
             return "Query failed: " + response.StatusCode + " - " + response.Content.ReadAsStringAsync().Result;
+        }
+        catch (Exception ex)
+        {
+            return "Error: " + ex.Message;
+        }
+    }
+
+    static string promptLLM(string finalPrompt)
+    {
+        using var httpClient = new HttpClient();
+        var payload = new
+        {
+            model = "qwen3:14b",
+            messages = new[] { new { role = "user", content = finalPrompt } }
+        };
+        var jsonPayload = JsonSerializer.Serialize(payload);
+        var content = new StringContent(jsonPayload, System.Text.Encoding.UTF8, "application/json");
+
+        try
+        {
+            var response = httpClient.PostAsync("https://192.168.118.23/v1/chat/completions", content).Result;
+            if (response.IsSuccessStatusCode)
+            {
+                var responseJson = response.Content.ReadAsStringAsync().Result;
+                var result = JsonSerializer.Deserialize<JsonElement>(responseJson);
+                if (result.TryGetProperty("choices", out var choices) && choices.GetArrayLength() > 0)
+                {
+                    var message = choices[0].GetProperty("message");
+                    return message.GetProperty("content").GetString() ?? "No response";
+                }
+            }
+            return "LLM Error: " + response.StatusCode;
         }
         catch (Exception ex)
         {

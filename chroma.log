@@ -1032,3 +1032,33 @@ ValueError: Collection example_collection does not exist.
 [36mDEBUG[0m:    [11-11-2025 17:02:34] Stopping component OpenTelemetryClient
 [32mINFO[0m:     [11-11-2025 17:02:34] Application shutdown complete.
 [32mINFO[0m:     [11-11-2025 17:02:34] Finished server process [[36m7352[0m]
+[33mWARNING[0m:  [11-11-2025 17:41:14] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [11-11-2025 17:41:14] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [11-11-2025 17:41:14] Starting component System
+[36mDEBUG[0m:    [11-11-2025 17:41:14] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [11-11-2025 17:41:14] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [11-11-2025 17:41:14] Starting component SqliteDB
+[36mDEBUG[0m:    [11-11-2025 17:41:14] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [11-11-2025 17:41:14] Starting component Posthog
+[36mDEBUG[0m:    [11-11-2025 17:41:14] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [11-11-2025 17:41:14] Starting component SegmentAPI
+[32mINFO[0m:     [11-11-2025 17:41:14] Started server process [[36m23116[0m]
+[32mINFO[0m:     [11-11-2025 17:41:14] Waiting for application startup.
+[32mINFO[0m:     [11-11-2025 17:41:14] Application startup complete.
+[32mINFO[0m:     [11-11-2025 17:41:14] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[32mINFO[0m:     [11-11-2025 17:41:28] ::1:60086 - "POST /api/v1/collections/collection/query HTTP/1.1" 400
+[32mINFO[0m:     [11-11-2025 17:42:32] ::1:60941 - "POST /api/v1/collections/collection/query HTTP/1.1" 400
+[32mINFO[0m:     [11-11-2025 17:42:47] ::1:60948 - "GET /api/v1/collections HTTP/1.1" 200
+[36mDEBUG[0m:    [11-11-2025 17:43:11] Starting component PersistentLocalHnswSegment
+[31mERROR[0m:    [11-11-2025 17:43:11] Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [11-11-2025 17:43:11] ::1:60965 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 17:43:44] ::1:60983 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 17:44:51] ::1:60643 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 17:50:32] ::1:53477 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 17:53:37] ::1:53604 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 17:54:31] ::1:64200 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 17:55:28] ::1:64919 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 17:56:10] ::1:64939 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 17:59:28] ::1:58784 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 18:00:43] ::1:62094 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [11-11-2025 18:01:43] ::1:56036 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200

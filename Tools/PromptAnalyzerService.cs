@@ -208,7 +208,7 @@ namespace Biz.TKV.AIModelProcess.Tools
                         return result;
                     }
 
-                    if (TryParseArray(content.Trim(), out var intents) ||
+                    if (TryParseArray(content.Trim(), out TokenUsagevar intents) ||
                         TryParseArray(NormalizeToJsonArray(content), out intents) ||
                         TryParseArray(TrailingCommasRx.Replace(NormalizeToJsonArray(content), "$1"), out intents))
                     {
