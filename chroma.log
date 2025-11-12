@@ -1062,3 +1062,37 @@ ValueError: Collection example_collection does not exist.
 [32mINFO[0m:     [11-11-2025 17:59:28] ::1:58784 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
 [32mINFO[0m:     [11-11-2025 18:00:43] ::1:62094 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
 [32mINFO[0m:     [11-11-2025 18:01:43] ::1:56036 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[33mWARNING[0m:  [12-11-2025 09:02:31] chroma_server_nofile is not supported on Windows. chroma_server_nofile will not be set.
+[32mINFO[0m:     [12-11-2025 09:02:32] Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+[36mDEBUG[0m:    [12-11-2025 09:02:32] Starting component System
+[36mDEBUG[0m:    [12-11-2025 09:02:32] Starting component OpenTelemetryClient
+[36mDEBUG[0m:    [12-11-2025 09:02:32] Starting component SimpleAssignmentPolicy
+[36mDEBUG[0m:    [12-11-2025 09:02:32] Starting component SqliteDB
+[36mDEBUG[0m:    [12-11-2025 09:02:32] Starting component QuotaEnforcer
+[36mDEBUG[0m:    [12-11-2025 09:02:32] Starting component Posthog
+[36mDEBUG[0m:    [12-11-2025 09:02:32] Starting component LocalSegmentManager
+[36mDEBUG[0m:    [12-11-2025 09:02:32] Starting component SegmentAPI
+[32mINFO[0m:     [12-11-2025 09:02:32] Started server process [[36m20368[0m]
+[32mINFO[0m:     [12-11-2025 09:02:32] Waiting for application startup.
+[32mINFO[0m:     [12-11-2025 09:02:32] Application startup complete.
+[32mINFO[0m:     [12-11-2025 09:02:32] Uvicorn running on [1mhttp://localhost:8000[0m (Press CTRL+C to quit)
+[36mDEBUG[0m:    [12-11-2025 09:02:49] Starting component PersistentLocalHnswSegment
+[31mERROR[0m:    [12-11-2025 09:02:49] Failed to send telemetry event CollectionQueryEvent: capture() takes 1 positional argument but 3 were given
+[32mINFO[0m:     [12-11-2025 09:02:49] ::1:55670 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 09:26:43] ::1:62225 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 09:30:51] ::1:56157 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 09:34:22] ::1:63436 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 09:51:03] ::1:52306 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:02:22] ::1:50170 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:06:20] ::1:63022 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:08:10] ::1:60357 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:09:17] ::1:62100 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:11:01] ::1:51731 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:12:09] ::1:53665 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:14:22] ::1:58539 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:15:44] ::1:58580 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:16:36] ::1:58601 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:17:35] ::1:54604 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:27:59] ::1:50608 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:29:36] ::1:61125 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200
+[32mINFO[0m:     [12-11-2025 10:31:15] ::1:60252 - "POST /api/v1/collections/4862b10e-6917-4176-86db-4ad0426ddd23/query HTTP/1.1" 200

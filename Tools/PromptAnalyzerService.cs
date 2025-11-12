@@ -112,14 +112,6 @@ namespace Biz.TKV.AIModelProcess.Tools
                 {
                     "intent": "",
                     "confidence": 0.92,
-                },
-                {
-                    "intent": "",
-                    "confidence": 0.88,
-                },
-                {
-                    "intent": "",
-                    "confidence": 0.91,
                 }
             ]
 
@@ -129,7 +121,7 @@ namespace Biz.TKV.AIModelProcess.Tools
             3. Each intent object must include:
                - "intent": The extracted intents from the user's prompt.
                - "confidence": A confidence score between 0 and 1 indicating the certainty of the intent.
-            4. Generate 5 intent objects always, even if confidence is low.
+            4. Generate 3 intent objects always, even if confidence is low.
             """;
             _httpClient = new HttpClient();
             _maxRetries = Math.Max(0, maxRetries);
@@ -208,7 +200,7 @@ namespace Biz.TKV.AIModelProcess.Tools
                         return result;
                     }
 
-                    if (TryParseArray(content.Trim(), out TokenUsagevar intents) ||
+                    if (TryParseArray(content.Trim(), out var intents) ||
                         TryParseArray(NormalizeToJsonArray(content), out intents) ||
                         TryParseArray(TrailingCommasRx.Replace(NormalizeToJsonArray(content), "$1"), out intents))
                     {

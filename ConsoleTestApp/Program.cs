@@ -15,28 +15,33 @@ class Program
         string userPrompt = "What is entanglement?";
 
         // Call the AnalyzePrompt function
-        var (intent, subject) = await AnalyzePrompt(userPrompt);
-        // Console.WriteLine("Intent: " + intent);
-        // Console.WriteLine("Subject: " + subject);
+        var (intent, subject, APinputToken, APoutputToken) = await AnalyzePrompt(userPrompt);
 
         // Call the RefineSubject function
-        var refinedSubject = RefineSubject(subject);
-        // Console.WriteLine("Refined Subject: " + refinedSubject);
+        var (refinedSubject, RSinputToken, RSoutputToken) = RefineSubject(subject);
 
         // Call the EmbedSubject function
-        var embeddedIntentRefinedSubject = EmbedSubject(intent + " " + refinedSubject);
+        var (embeddedIntentRefinedSubject, ESinputToken, ESoutputToken) = EmbedSubject(intent + " " + refinedSubject);
 
         // Call the ExtractContent function
         var extractedContent = ExtractContent(embeddedIntentRefinedSubject);
+
+        // Construct the final prompt
         var finalPrompt = "User's Query: \n[" + userPrompt + "]\n\nIntent: \n[" + intent + "]\n\nRelevant Information: \n[" + extractedContent + "]\n\nInstructions: \n1. Using the intent and relevant information, provide a clear, concise, and accurate answer to the user's query. \n2. If the information is insufficient, say so politely. \n3. Keep the response natural and directly address the query. \n4. IMPORTANT: Respond in plain text only. \n5. IMPORTANT: Do not use any markdown formatting, bold (**text**), italics (*text*), or special characters like **, *, _, etc. \n6. IMPORTANT: Avoid all formatting.";
         Console.WriteLine(finalPrompt);
 
         // Prompt LLM with finalPrompt
-        var response = promptLLM(finalPrompt);
-        Console.WriteLine("\nLLM Response: \n" + response);
+        var (response, PLinputToken, PLoutputToken) = PromptLLM(finalPrompt);
+        Console.WriteLine("\nLLM Response: \n" + response + "\n");
+
+        Console.WriteLine($"AnalyzePrompt - Input: {APinputToken}, Output: {APoutputToken}");
+        Console.WriteLine($"RefineSubject - Input: {RSinputToken}, Output: {RSoutputToken}");
+        Console.WriteLine($"EmbedSubject - Input: {ESinputToken}, Output: {ESoutputToken}");
+        Console.WriteLine($"PromptLLM - Input: {PLinputToken}, Output: {PLoutputToken}");
+        Console.WriteLine($"Total Tokens: {APinputToken + APoutputToken + RSinputToken + RSoutputToken + ESinputToken + ESoutputToken + PLinputToken + PLoutputToken}");
     }
 
-    static async Task<(string Intent, string Subject)> AnalyzePrompt(string userPrompt)
+    static async Task<(string Intent, string Subject, int InputTokens, int OutputTokens)> AnalyzePrompt(string userPrompt)
     {
         // Initialize the PromptAnalyzerService with default parameters
         var promptAnalyzerService = new PromptAnalyzerService(
@@ -55,14 +60,14 @@ class Program
             var highestConfidenceIntent = result.Intents.OrderByDescending(i => i.Confidence).FirstOrDefault();
             if (highestConfidenceIntent != null)
             {
-                return (highestConfidenceIntent.Intent, highestConfidenceIntent.Subject);
+                return (highestConfidenceIntent.Intent, highestConfidenceIntent.Subject, result.Usage.InputTokens, result.Usage.OutputTokens);
             }
         }
 
-        return ("NoIntent", "NoSubject");
+        return ("NoIntent", "NoSubject", 0, 0);
     }
 
-    static string RefineSubject(string subject)
+    static (string RefinedText, int InputTokens, int OutputTokens) RefineSubject(string subject)
     {
         // Initialize the RefinedFactory with default parameters
         var refinedModel = new RefinedModel
@@ -79,13 +84,13 @@ class Program
 
         if (!string.IsNullOrEmpty(refinedResponse.RefinedText))
         {
-            return refinedResponse.RefinedText;
+            return (refinedResponse.RefinedText, refinedResponse.PromptToken ?? 0, refinedResponse.CompletionToken ?? 0);
         }
 
-        return "NoRefinedSubject";
+        return ("NoRefinedSubject", 0, 0);
     }
 
-    static string EmbedSubject(string intentRefinedSubject)
+    static (string EmbeddedText, int InputTokens, int OutputTokens) EmbedSubject(string intentRefinedSubject)
     {
         // Initialize the EmbeddingFactory with default parameters
         var embeddingModel = new EmbeddingModel
@@ -101,10 +106,10 @@ class Program
 
         if (embeddingResponse.StatusCode.StartsWith("Error"))
         {
-            return "Embedding failed: " + embeddingResponse.StatusCode;
+            return ("Embedding failed: " + embeddingResponse.StatusCode, 0, 0);
         }
 
-        return embeddingResponse.EmbeddedText;
+        return (embeddingResponse.EmbeddedText, embeddingResponse.PromptToken ?? 0, embeddingResponse.CompletionToken ?? 0);
     }
 
     static string ExtractContent(string embeddedIntentRefinedSubject)
@@ -163,7 +168,7 @@ class Program
         }
     }
 
-    static string promptLLM(string finalPrompt)
+    static (string Response, int InputTokens, int OutputTokens) PromptLLM(string finalPrompt)
     {
         using var httpClient = new HttpClient();
         var payload = new
@@ -181,17 +186,25 @@ class Program
             {
                 var responseJson = response.Content.ReadAsStringAsync().Result;
                 var result = JsonSerializer.Deserialize<JsonElement>(responseJson);
+
+                int inputTokens = 0, outputTokens = 0;
+                if (result.TryGetProperty("usage", out var usage))
+                {
+                    inputTokens = usage.TryGetProperty("prompt_tokens", out var pt) ? pt.GetInt32() : 0;
+                    outputTokens = usage.TryGetProperty("completion_tokens", out var ct) ? ct.GetInt32() : 0;
+                }
+
                 if (result.TryGetProperty("choices", out var choices) && choices.GetArrayLength() > 0)
                 {
                     var message = choices[0].GetProperty("message");
-                    return message.GetProperty("content").GetString() ?? "No response";
+                    return (message.GetProperty("content").GetString() ?? "No response", inputTokens, outputTokens);
                 }
             }
-            return "LLM Error: " + response.StatusCode;
+            return ("LLM Error: " + response.StatusCode, 0, 0);
         }
         catch (Exception ex)
         {
-            return "Error: " + ex.Message;
+            return ("Error: " + ex.Message, 0, 0);
         }
     }
 }
